@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#F44336</color>
+
+    <color name="colorBorder">#E6E6E6</color>
+
+    <color name="colorActive">#3ADB76</color>
+    <color name="colorPaused">#FFAE00</color>
+    <color name="colorInactive">#CACACA</color>
+    <color name="colorDisabled">#8A8A8A</color>
+
+    <color name="colorHighlight1">#CC4B37</color>
+    <color name="colorHighlight2">#1779BA</color>
+    <color name="colorHighlight3">#FFAE00</color>
+    <color name="colorHighlight4">#16B5BA</color>
+
+</resources>

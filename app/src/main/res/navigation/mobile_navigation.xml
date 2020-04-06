@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_status">
+
+    <fragment
+        android:id="@+id/nav_status"
+        android:name="ee.itcollege.aikada.psuinterface.ui.status.StatusFragment"
+        android:label="@string/menu_status"
+        tools:layout="@layout/fragment_status">
+    </fragment>
+    <fragment
+
+        android:id="@+id/nav_profiles"
+        android:name="ee.itcollege.aikada.psuinterface.ui.profiles.ProfilesFragment"
+        android:label="@string/menu_profiles"
+        tools:layout="@layout/fragment_profiles" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="ee.itcollege.aikada.psuinterface.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/nav_launch_job"
+        android:name="ee.itcollege.aikada.psuinterface.ui.launch_job.LaunchJobFragment"
+        android:label="@string/menu_launch_job"
+        tools:layout="@layout/fragment_launch_job" />
+
+    <fragment
+        android:id="@+id/nav_statistics"
+        android:name="ee.itcollege.aikada.psuinterface.ui.statistics.StatisticsFragment"
+        android:label="@string/menu_statistics"
+        tools:layout="@layout/fragment_statistics" />
+
+</navigation>
