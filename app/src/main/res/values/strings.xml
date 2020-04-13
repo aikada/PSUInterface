@@ -16,4 +16,8 @@
     <string name="menu_settings">Settings</string>
     <string name="menu_launch_job">Launch job</string>
     <string name="menu_statistics">Statistics</string>
+
+    <!-- Strings with formatting -->
+    <string name="profile_info">%1$s - %2$s - %3$s</string>
+
 </resources>

@@ -7,32 +7,32 @@
 
     <fragment
         android:id="@+id/nav_status"
-        android:name="ee.itcollege.aikada.psuinterface.ui.status.StatusFragment"
+        android:name="ee.aikada.psuinterface.ui.status.StatusFragment"
         android:label="@string/menu_status"
         tools:layout="@layout/fragment_status">
     </fragment>
     <fragment
 
         android:id="@+id/nav_profiles"
-        android:name="ee.itcollege.aikada.psuinterface.ui.profiles.ProfilesFragment"
+        android:name="ee.aikada.psuinterface.ui.profiles.ProfilesFragment"
         android:label="@string/menu_profiles"
         tools:layout="@layout/fragment_profiles" />
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="ee.itcollege.aikada.psuinterface.ui.settings.SettingsFragment"
+        android:name="ee.aikada.psuinterface.ui.settings.SettingsFragment"
         android:label="@string/menu_settings"
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/nav_launch_job"
-        android:name="ee.itcollege.aikada.psuinterface.ui.launch_job.LaunchJobFragment"
+        android:name="ee.aikada.psuinterface.ui.launch_job.LaunchJobFragment"
         android:label="@string/menu_launch_job"
         tools:layout="@layout/fragment_launch_job" />
 
     <fragment
         android:id="@+id/nav_statistics"
-        android:name="ee.itcollege.aikada.psuinterface.ui.statistics.StatisticsFragment"
+        android:name="ee.aikada.psuinterface.ui.statistics.StatisticsFragment"
         android:label="@string/menu_statistics"
         tools:layout="@layout/fragment_statistics" />
 

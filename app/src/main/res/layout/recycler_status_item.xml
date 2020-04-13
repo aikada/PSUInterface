@@ -73,14 +73,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView_status_voltage"
+                android:id="@+id/textView_status_field1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="–"
                 android:textColor="@color/colorHighlight1" />
 
             <TextView
-                android:id="@+id/textView_status_current"
+                android:id="@+id/textView_status_field2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="–"
@@ -95,14 +95,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView_status_resistance"
+                android:id="@+id/textView_status_field3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="–"
                 android:textColor="@color/colorHighlight3" />
 
             <TextView
-                android:id="@+id/textView_status_current_max"
+                android:id="@+id/textView_status_field4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="–"
@@ -117,7 +117,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView_status_time_progress"
+                android:id="@+id/textView_status_time_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00:00:00/00:00:00"
@@ -125,7 +125,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView_status_time_left"
+                android:id="@+id/textView_status_time_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Time left 00:00:00"
@@ -133,7 +133,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView_status_time_duration"
+                android:id="@+id/textView_status_time_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Day 00:00:00 – Day 00:00:00"
