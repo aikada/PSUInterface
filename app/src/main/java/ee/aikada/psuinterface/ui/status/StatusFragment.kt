@@ -2,6 +2,7 @@ package ee.aikada.psuinterface.ui.status
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,21 +12,28 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ee.aikada.psuinterface.ProfileActivity
 import ee.aikada.psuinterface.R
-import ee.aikada.psuinterface.models.StatusItem
+import ee.aikada.psuinterface.DTO.StatusItemDTO
+import ee.aikada.psuinterface.helpers.StatusController
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class StatusFragment : Fragment() {
+    private val TAG = StatusFragment::class.java.simpleName
 
-    val statusItems: List<StatusItem> = listOf(
-        StatusItem("CH1"),
-        StatusItem("CH2")
+    var statusItems: List<StatusItemDTO> = listOf(
+        StatusItemDTO("CH1"),
+        StatusItemDTO("CH2")
         )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
+
+        val statusController: StatusController = StatusController(activity!!.applicationContext)
+        statusItems = statusController.getStatusItemDTOs()
+        Log.d(TAG, statusItems.toString())
+
     }
 
     override fun onCreateView(

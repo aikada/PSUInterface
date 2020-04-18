@@ -1,5 +1,6 @@
 package ee.aikada.psuinterface.helpers
 
+import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -12,7 +13,7 @@ object Format {
     )
 
     fun toCurrent(value: String): String {
-        return if (value == "") emptyValue else "$value As"
+        return if (value == "") emptyValue else "$value A"
     }
 
     fun toResistance(value: String): String {
@@ -33,7 +34,8 @@ object Format {
         )
     }
 
-    fun epochMillisToDayAndTime(startTimeMs: Long): String {
+    fun epochMillisToDayAndTime(startTimeMs: Long?): String {
+        if (startTimeMs == null) return ""
         val cal = GregorianCalendar()
         cal.timeInMillis = startTimeMs
 
@@ -56,15 +58,26 @@ object Format {
         return "$hh:$mm:$ss"
     }
 
-    fun millisToTime(millis: Long): String {
-        return String.format("%02d:%02d:%02d",
+    fun millisToTime(millis: Long?): String {
+        return if (millis != null) String.format(
+            "%02d:%02d:%02d",
             TimeUnit.MILLISECONDS.toHours(millis),
             TimeUnit.MILLISECONDS.toMinutes(millis) -
                     TimeUnit.HOURS.toMinutes(
-                        TimeUnit.MILLISECONDS.toHours(millis)),
+                        TimeUnit.MILLISECONDS.toHours(millis)
+                    ),
             TimeUnit.MILLISECONDS.toSeconds(millis) -
                     TimeUnit.MINUTES.toSeconds(
-                        TimeUnit.MILLISECONDS.toMinutes(millis)))
+                        TimeUnit.MILLISECONDS.toMinutes(millis)
+                    )
+        ) else emptyTimeValue
 
+    }
+
+    // https://stackoverflow.com/questions/26637168/how-to-convert-a-date-to-milliseconds
+    fun dateStringToMillis(dateString: String?): Long {
+        val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS", Locale.getDefault())
+        val date: Date = sdf.parse(dateString)
+        return date.time
     }
 }

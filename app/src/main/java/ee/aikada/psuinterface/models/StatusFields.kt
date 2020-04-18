@@ -1,14 +1,15 @@
 package ee.aikada.psuinterface.models
 
-import java.sql.Timestamp
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class StatusFields(
-    var field1: String = "1",
-    var field2: String = "2",
-    var field3: String = "3",
-    var field4: String = "4",
-    var timeStart: Long = System.currentTimeMillis(), //start time
-    var timeDurationRunning: Long = 80000,
-    var timeDurationTotal: Long = 800000
-) {
-}
+    var voltage: Float = 0F,
+    var current: Float = 0F,
+    var limit: Float?,
+    var limitType: String?,
+    var resistance: Float?,
+    var startTime: String?,
+    var duration_ms: Long?,
+    var runtime_ms: Long?
+)

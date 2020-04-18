@@ -1,4 +1,7 @@
 package ee.aikada.psuinterface.models
 
-data class StatusPackage(val completeStatusInfo: String) {
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class StatusPackage (val ch: Array<StatusItem>) {
 }

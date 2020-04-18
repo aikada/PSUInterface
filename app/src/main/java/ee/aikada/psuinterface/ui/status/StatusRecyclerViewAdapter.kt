@@ -5,15 +5,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ee.aikada.psuinterface.R
-import ee.aikada.psuinterface.models.StatusFields
-import ee.aikada.psuinterface.models.StatusItem
+import ee.aikada.psuinterface.DTO.StatusFieldsDTO
+import ee.aikada.psuinterface.DTO.StatusItemDTO
 import ee.aikada.psuinterface.models.enums.ProfileType
 
 
 /**
  * TODO: document your custom view class.
  */
-class StatusRecyclerViewAdapter(private val items: List<StatusItem>) :
+class StatusRecyclerViewAdapter(private val items: List<StatusItemDTO>) :
     RecyclerView.Adapter<StatusItemViewHolder>() {
 
     override fun getItemCount(): Int {
@@ -26,7 +26,7 @@ class StatusRecyclerViewAdapter(private val items: List<StatusItem>) :
     }
 
     override fun onBindViewHolder(holder: StatusItemViewHolder, position: Int) {
-        val statusItem: StatusItem = items[position]
+        val statusItem: StatusItemDTO = items[position]
         holder.bind(statusItem)
     }
 }
@@ -58,8 +58,8 @@ class StatusItemViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         mT3 = itemView.findViewById(R.id.textView_status_time_3)
     }
 
-    fun bind(statusItem: StatusItem) {
-        val status: StatusFields = statusItem.statusFields as StatusFields
+    fun bind(statusItem: StatusItemDTO) {
+        val statusForDisplay: StatusFieldsDTO = statusItem.statusFields
         val currentProfile = ProfileType.valueOf(statusItem.profileType.toString())
 
         mChannelName?.text = statusItem.channelName
@@ -68,13 +68,13 @@ class StatusItemViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
                 R.string.profile_info,
                 statusItem.profileName, statusItem.profileGroup, statusItem.profileType
             )
-        mField1?.text = currentProfile.formatField1(status)
-        mField2?.text = currentProfile.formatField2(status)
-        mField3?.text = currentProfile.formatField3(status)
-        mField4?.text = currentProfile.formatField4(status)
-        mT1?.text = currentProfile.formatTimeField1(status)
-        mT2?.text = currentProfile.formatTimeField2(status)
-        mT3?.text = currentProfile.formatTimeField3(status)
+        mField1?.text = currentProfile.formatField1(statusForDisplay)
+        mField2?.text = currentProfile.formatField2(statusForDisplay)
+        mField3?.text = currentProfile.formatField3(statusForDisplay)
+        mField4?.text = currentProfile.formatField4(statusForDisplay)
+        mT1?.text = currentProfile.formatTimeField1(statusForDisplay)
+        mT2?.text = currentProfile.formatTimeField2(statusForDisplay)
+        mT3?.text = currentProfile.formatTimeField3(statusForDisplay)
 
     }
 }
