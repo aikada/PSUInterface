@@ -5,6 +5,7 @@ import ee.aikada.psuinterface.DTO.StatusItemDTO
 import ee.aikada.psuinterface.helpers.Format
 import ee.aikada.psuinterface.models.StatusFields
 import ee.aikada.psuinterface.models.StatusItem
+import ee.aikada.psuinterface.models.enums.LimitType
 import ee.aikada.psuinterface.models.enums.ProfileType
 import java.text.SimpleDateFormat
 import java.util.*
@@ -30,27 +31,16 @@ object StatusItemMapper {
     fun mapStatusFields(statusFields: StatusFields, profileType: ProfileType): StatusFieldsDTO {
         val statusFieldsDTO = StatusFieldsDTO()
 
-        statusFieldsDTO.field1 = statusFields.voltage.toString()
-        statusFieldsDTO.field2 = statusFields.current.toString()
-        when (profileType) {
-            ProfileType.CC -> {
-                statusFieldsDTO.field3 = statusFields.resistance.toString()
-                statusFieldsDTO.field4 = statusFields.limit.toString()
-            }
-            ProfileType.CV -> {
-                statusFieldsDTO.field3 = statusFields.resistance.toString()
-                statusFieldsDTO.field4 = statusFields.limit.toString()
-            }
+        statusFieldsDTO.voltage = statusFields.voltage
+        statusFieldsDTO.current = statusFields.current
 
-            else -> {
-                statusFieldsDTO.field3 = statusFields.resistance.toString()
-                statusFieldsDTO.field4 = ""
-            }
-        }
+        statusFieldsDTO.limit = statusFields.limit
+        statusFieldsDTO.limitType = LimitType.valueOf(statusFields.limitType.toString())
+        statusFieldsDTO.resistance = statusFields.resistance
 
-        statusFieldsDTO.timeStart = Format.dateStringToMillis(statusFields.startTime)
-        statusFieldsDTO.timeRuntime = statusFields.runtime_ms
-        statusFieldsDTO.timeDuration = statusFields.duration_ms
+        statusFieldsDTO.startTime = Format.dateStringToMillis(statusFields.startTime)
+        statusFieldsDTO.runtime_ms = statusFields.runtime_ms
+        statusFieldsDTO.duration_ms = statusFields.duration_ms
 
         return statusFieldsDTO
     }

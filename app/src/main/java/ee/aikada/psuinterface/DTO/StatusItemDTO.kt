@@ -7,10 +7,5 @@ data class StatusItemDTO(val channelName: String) {
     var profileName: String = "none"
     var profileType: ProfileType = ProfileType.CC
     var statusFields: StatusFieldsDTO =
-        StatusFieldsDTO(
-            "F1",
-            "F2",
-            "F3",
-            "F4"
-        )
+        StatusFieldsDTO()
 }

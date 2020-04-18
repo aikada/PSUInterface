@@ -1,13 +1,15 @@
 package ee.aikada.psuinterface.DTO
 
-import java.sql.Timestamp
+import ee.aikada.psuinterface.models.enums.LimitType
 
 data class StatusFieldsDTO(
-    var field1: String = "1",
-    var field2: String = "2",
-    var field3: String = "3",
-    var field4: String = "4",
-    var timeStart: Long? = System.currentTimeMillis(), //start time
-    var timeRuntime: Long? = 0,
-    var timeDuration: Long? = 0
-)
+    var voltage: Number = 0,
+    var current: Number = 0
+) {
+    var limit: Number? = null
+    var limitType: LimitType? = null
+    var resistance: Number? = null
+    var startTime: Long? = null
+    var duration_ms: Long? = null
+    var runtime_ms: Long? = null
+}

@@ -59,7 +59,7 @@ class StatusItemViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     }
 
     fun bind(statusItem: StatusItemDTO) {
-        val statusForDisplay: StatusFieldsDTO = statusItem.statusFields
+        val statusFields: StatusFieldsDTO = statusItem.statusFields
         val currentProfile = ProfileType.valueOf(statusItem.profileType.toString())
 
         mChannelName?.text = statusItem.channelName
@@ -68,13 +68,13 @@ class StatusItemViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
                 R.string.profile_info,
                 statusItem.profileName, statusItem.profileGroup, statusItem.profileType
             )
-        mField1?.text = currentProfile.formatField1(statusForDisplay)
-        mField2?.text = currentProfile.formatField2(statusForDisplay)
-        mField3?.text = currentProfile.formatField3(statusForDisplay)
-        mField4?.text = currentProfile.formatField4(statusForDisplay)
-        mT1?.text = currentProfile.formatTimeField1(statusForDisplay)
-        mT2?.text = currentProfile.formatTimeField2(statusForDisplay)
-        mT3?.text = currentProfile.formatTimeField3(statusForDisplay)
+        mField1?.text = currentProfile.formatField1(statusFields)
+        mField2?.text = currentProfile.formatField2(statusFields)
+        mField3?.text = currentProfile.formatField3(statusFields)
+        mField4?.text = currentProfile.formatField4(statusFields)
+        mT1?.text = currentProfile.formatTimeField1(statusFields)
+        mT2?.text = currentProfile.formatTimeField2(statusFields)
+        mT3?.text = currentProfile.formatTimeField3(statusFields)
 
     }
 }

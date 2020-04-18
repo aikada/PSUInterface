@@ -1,5 +1,6 @@
 package ee.aikada.psuinterface.helpers
 
+import ee.aikada.psuinterface.models.enums.LimitType
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -12,20 +13,22 @@ object Format {
         "Wed", "Thur", "Fri", "Sat"
     )
 
-    fun toCurrent(value: String): String {
-        return if (value == "") emptyValue else "$value A"
+    fun toCurrent(value: Any?): String {
+        return if (value == null) emptyValue else "$value A"
     }
 
-    fun toResistance(value: String): String {
-        return if (value == "") emptyValue else "($value Ω)"
+    fun toResistance(value: Any?): String {
+        return if (value == null) emptyValue else "($value Ω)"
     }
 
-    fun toVoltage(value: String): String {
-        return if (value == "") emptyValue else "$value V"
+    fun toVoltage(value: Any?): String {
+        return if (value == null) emptyValue else "$value V"
     }
 
-    fun toVoltageWithBraces(value: String): String {
-        return if (value == "") emptyValue else "($value V)"
+    fun toLimit(value: Any?, limitType: LimitType?): String {
+        if (value == null && limitType == null) return emptyTimeValue
+        val unit: String = limitType!!.unitName
+        return "($value $unit)"
     }
 
     fun toTimeStart(startTimeMs: Long): String {
