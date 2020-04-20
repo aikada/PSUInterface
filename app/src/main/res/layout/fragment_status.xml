@@ -6,31 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.status.StatusFragment">
 
-    <Button
-        android:id="@+id/button_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Open profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView_first"
-        />
-
-    <TextView
-        android:id="@+id/textView_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Status fragment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_status_items"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_first"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_height="0dp"
         android:layout_width="0dp" />
 

@@ -14,21 +14,19 @@ object StatusItemMapper {
     fun mapStatusItem(statusItem: StatusItem): StatusItemDTO {
         val channelName = statusItem.channels.joinToString("+", "CH")
         val profileNameAndGroup = statusItem.profile?.split("/")?.toTypedArray()
-        val currentProfile = ProfileType.valueOf(statusItem.profileType.toString())
+        val currentProfile =
+            if (statusItem.profileType == null) null else ProfileType.valueOf(statusItem.profileType.toString())
 
         val statusItemDTO = StatusItemDTO(channelName)
         statusItemDTO.profileGroup = profileNameAndGroup?.get(0) ?: ""
         statusItemDTO.profileName = profileNameAndGroup?.get(1) ?: ""
-
         statusItemDTO.profileType = currentProfile
-        if (statusItem.status != null) {
-            statusItemDTO.statusFields = mapStatusFields(statusItem.status!!, currentProfile)
-        }
+        statusItemDTO.statusFields = statusItem.status?.let { mapStatusFields(it) }
 
         return statusItemDTO
     }
 
-    fun mapStatusFields(statusFields: StatusFields, profileType: ProfileType): StatusFieldsDTO {
+    fun mapStatusFields(statusFields: StatusFields): StatusFieldsDTO {
         val statusFieldsDTO = StatusFieldsDTO()
 
         statusFieldsDTO.voltage = statusFields.voltage

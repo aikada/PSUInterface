@@ -11,7 +11,7 @@
         android:id="@+id/textView_status_channel_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CH1"
+        android:text="CH0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -19,7 +19,8 @@
         android:id="@+id/textView_status_channel_properties"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="profile group - profile name - profile type"
+        android:text="tap to choose profile"
+        android:textStyle="italic"
         app:layout_constraintEnd_toStartOf="@+id/imageButton_status_pause"
         app:layout_constraintStart_toEndOf="@+id/textView_status_channel_name"
         app:layout_constraintTop_toTopOf="parent" />
@@ -120,7 +121,7 @@
                 android:id="@+id/textView_status_time_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="00:00:00/00:00:00"
+                android:text=""
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -128,7 +129,7 @@
                 android:id="@+id/textView_status_time_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Time left 00:00:00"
+                android:text=""
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -136,7 +137,7 @@
                 android:id="@+id/textView_status_time_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Day 00:00:00 – Day 00:00:00"
+                android:text=""
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

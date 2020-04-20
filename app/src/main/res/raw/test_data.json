@@ -4,6 +4,7 @@
       "channels": [1],
       "profile": "group1/test1",
       "profileType": "CC",
+      "paused": false,
       "status": {
         "voltage": 0.4,
         "current": 1.5,
@@ -19,6 +20,7 @@
       "channels": [2, 3],
       "profile": "group1/test2",
       "profileType": "CV",
+      "paused": false,
       "status": {
         "voltage": 2,
         "current": 3,
@@ -34,6 +36,7 @@
       "channels": [4],
       "profile": "group1/test3",
       "profileType": "Graph",
+      "paused": true,
       "status": {
         "voltage": 0,
         "current": 0,
@@ -44,6 +47,20 @@
         "duration_ms": null,
         "runtime_ms": 20000
       }
+    },
+    {
+      "channels": [5],
+      "profile": null,
+      "profileType": null,
+      "paused": false,
+      "status": null
+    },
+    {
+      "channels": [6],
+      "profile": null,
+      "profileType": null,
+      "paused": false,
+      "status": null
     }
   ]
 }
