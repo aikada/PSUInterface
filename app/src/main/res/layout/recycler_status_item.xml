@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/background_border"
-    android:padding="5dp">
+    android:padding="@dimen/profile_card_padding">
 
     <TextView
         android:id="@+id/textView_status_channel_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CH0"
+        android:padding="@dimen/profile_card_padding"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/textSize_channel_name"/>
 
     <TextView
         android:id="@+id/textView_status_channel_properties"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="tap to choose profile"
+        android:padding="@dimen/profile_card_padding"
         android:textStyle="italic"
         app:layout_constraintEnd_toStartOf="@+id/imageButton_status_pause"
         app:layout_constraintStart_toEndOf="@+id/textView_status_channel_name"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/textSize_profile_info"/>
 
     <ImageButton
         android:id="@+id/imageButton_status_pause"
@@ -53,7 +56,7 @@
         android:background="@color/colorBorder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_status_channel_properties" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_status_channel_name" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -78,14 +81,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="–"
-                android:textColor="@color/colorHighlight1" />
+                android:padding="@dimen/profile_card_padding"
+                android:textColor="@color/colorHighlight1"
+                android:textSize="@dimen/textSize_profile_value" />
 
             <TextView
                 android:id="@+id/textView_status_field2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="–"
-                android:textColor="@color/colorHighlight2" />
+                android:padding="@dimen/profile_card_padding"
+                android:textColor="@color/colorHighlight2"
+                android:textSize="@dimen/textSize_profile_value"/>
         </LinearLayout>
 
         <LinearLayout
@@ -100,20 +107,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="–"
-                android:textColor="@color/colorHighlight3" />
+                android:padding="@dimen/profile_card_padding"
+                android:textColor="@color/colorHighlight3"
+                android:textSize="@dimen/textSize_profile_value"/>
 
             <TextView
                 android:id="@+id/textView_status_field4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="–"
-                android:textColor="@color/colorHighlight4" />
+                android:padding="@dimen/profile_card_padding"
+                android:textColor="@color/colorHighlight4"
+                android:textSize="@dimen/textSize_profile_value"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -123,7 +134,8 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="@dimen/textSize_profile_time_info"/>
 
             <TextView
                 android:id="@+id/textView_status_time_2"
@@ -131,7 +143,8 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="@dimen/textSize_profile_time_info"/>
 
             <TextView
                 android:id="@+id/textView_status_time_3"
@@ -139,7 +152,8 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="@dimen/textSize_profile_time_info"/>
 
         </LinearLayout>
     </LinearLayout>

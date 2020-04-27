@@ -1,4 +1,4 @@
-package ee.aikada.psuinterface.ui.launch_job
+package ee.aikada.psuinterface.ui.launchJob
 
 import androidx.lifecycle.ViewModel
 

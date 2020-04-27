@@ -10,7 +10,7 @@ object Format {
     private const val emptyTimeValue = "00:00:00"
     private val days = arrayOf(
         "Day", "Sun", "Mon", "Tue",
-        "Wed", "Thur", "Fri", "Sat"
+        "Wed", "Thu", "Fri", "Sat"
     )
 
     fun toCurrent(value: Any?): String {

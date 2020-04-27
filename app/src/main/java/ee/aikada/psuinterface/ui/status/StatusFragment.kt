@@ -6,14 +6,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ee.aikada.psuinterface.DTO.StatusItemDTO
 import ee.aikada.psuinterface.ProfileActivity
 import ee.aikada.psuinterface.R
-import ee.aikada.psuinterface.helpers.StatusController
+import ee.aikada.psuinterface.controllers.StatusController
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -47,18 +46,16 @@ class StatusFragment : Fragment() {
     }
 
     private fun setUpRecyclerView(view: View) {
-        val statusController: StatusController = StatusController(activity!!.applicationContext)
+        val statusController: StatusController =
+            StatusController(activity!!.applicationContext)
         statusItems = statusController.getStatusItemDTOs()
-        recyclerAdapter = StatusRecyclerViewAdapter(statusItems, { channel -> openProfileActivity(channel) });
+        recyclerAdapter = StatusRecyclerViewAdapter(statusItems) { channel -> openProfileActivity(channel) };
 
         Log.d(TAG, statusItems.toString())
         view.findViewById<RecyclerView>(R.id.recycler_status_items).apply {
-            // set a LinearLayoutManager to handle Android RecyclerView behavior
             layoutManager = LinearLayoutManager(activity)
-            // set the custom adapter to the RecyclerView
             adapter = recyclerAdapter
         }
-
     }
 
     companion object {
@@ -68,6 +65,7 @@ class StatusFragment : Fragment() {
     fun openProfileActivity(channel: Any) {
         Log.d(TAG, channel.toString())
         val intent = Intent(activity, ProfileActivity::class.java)
+        intent.putExtra("channelName", channel.toString())
         activity?.startActivity(intent)
     }
 

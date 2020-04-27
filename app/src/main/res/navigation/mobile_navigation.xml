@@ -12,12 +12,17 @@
         tools:layout="@layout/fragment_status">
     </fragment>
     <fragment
-
-        android:id="@+id/nav_profiles"
-        android:name="ee.aikada.psuinterface.ui.profiles.ProfilesFragment"
+        android:id="@+id/nav_profiles_start"
+        android:name="ee.aikada.psuinterface.ui.profiles.ProfilesStartFragment"
         android:label="@string/menu_profiles"
-        tools:layout="@layout/fragment_profiles" />
+        tools:layout="@layout/fragment_profiles_startpage" >
+    </fragment>
 
+    <fragment
+        android:id="@+id/nav_profiles"
+        android:name="ee.aikada.psuinterface.ui.profileGroups.ProfileGroupsFragment"
+        android:label="@string/menu_profiles"
+        tools:layout="@layout/fragment_profiles_groups" />
     <fragment
         android:id="@+id/nav_settings"
         android:name="ee.aikada.psuinterface.ui.settings.SettingsFragment"
@@ -26,7 +31,7 @@
 
     <fragment
         android:id="@+id/nav_launch_job"
-        android:name="ee.aikada.psuinterface.ui.launch_job.LaunchJobFragment"
+        android:name="ee.aikada.psuinterface.ui.launchJob.LaunchJobFragment"
         android:label="@string/menu_launch_job"
         tools:layout="@layout/fragment_launch_job" />
 

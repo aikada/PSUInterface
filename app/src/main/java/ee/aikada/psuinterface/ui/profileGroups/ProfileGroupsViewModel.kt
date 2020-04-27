@@ -1,4 +1,4 @@
-package ee.aikada.psuinterface.ui.profilegroups
+package ee.aikada.psuinterface.ui.profileGroups
 
 import androidx.lifecycle.ViewModel
 

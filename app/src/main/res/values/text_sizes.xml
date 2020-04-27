@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textSize_channel_name">16sp</dimen>
+    <dimen name="textSize_profile_info">14sp</dimen>
+    <dimen name="textSize_profile_value">16sp</dimen>
+    <dimen name="textSize_profile_time_info">12sp</dimen>
+</resources>

@@ -3,9 +3,9 @@ package ee.aikada.psuinterface.models.enums
 import ee.aikada.psuinterface.DTO.StatusFieldsDTO
 import ee.aikada.psuinterface.helpers.Format
 
-enum class ProfileType(className: String) {
-    CC("CC"),
-    CV("CV"),
+enum class ProfileType(val profileName: String) {
+    CC("Constant current"),
+    CV("Constant voltage"),
     Graph("Graph") {
         override fun formatField3(value: StatusFieldsDTO) =
             "Graph"

@@ -12,7 +12,7 @@ import ee.aikada.psuinterface.R
 import ee.aikada.psuinterface.models.enums.ProfileType
 
 
-class StatusRecyclerViewAdapter(private val items: List<StatusItemDTO>, val listener : (Any) -> Unit) :
+class StatusRecyclerViewAdapter(private val items: List<StatusItemDTO>, private val listener : (Any) -> Unit) :
     RecyclerView.Adapter<StatusItemViewHolder>() {
 
     override fun getItemCount(): Int {
@@ -29,11 +29,6 @@ class StatusRecyclerViewAdapter(private val items: List<StatusItemDTO>, val list
         val statusItem: StatusItemDTO = items[position]
         holder.bind(statusItem, listener)
     }
-
-    fun setOnClickListener(listener: () -> Unit){
-        listener() // or you could use optional if the lister is nullable "listener?.invoke()"
-    }
-
 
 }
 

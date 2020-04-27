@@ -1,6 +1,5 @@
 package ee.aikada.psuinterface
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -13,11 +12,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
-import ee.aikada.psuinterface.helpers.StatusController
-import ee.aikada.psuinterface.models.StatusPackage
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.*
-import java.io.BufferedReader
 
 
 private lateinit var appBarConfiguration: AppBarConfiguration
@@ -68,6 +63,26 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onBackPressed() {
+        Log.d(TAG, "onBackPressed")
+        var count = supportFragmentManager.backStackEntryCount
+        if (count == 0) {
+            super.onBackPressed()
+        } else {
+            supportFragmentManager.popBackStack()
+        }
+//        when (supportFragmentManager.findFragmentById(R.id.container)) {
+//            is ProfilesFragment -> {
+//                supportFragmentManager.beginTransaction()
+//                    .replace(R.id.container, ProfileGroupsFragment.newInstance())
+//                    .commitNow()
+//            }
+//            else -> {
+//                super.onBackPressed()
+//            }
+//        }
     }
 
 }
