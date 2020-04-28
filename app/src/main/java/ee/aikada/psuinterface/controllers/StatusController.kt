@@ -27,6 +27,6 @@ class StatusController(private var context: Context) {
         val text = testData.bufferedReader().use(BufferedReader::readText)
         val jsonParser = Json(JsonConfiguration.Stable)
 
-        return jsonParser.parse(StatusPackage.serializer(), text);
+        return jsonParser.parse(StatusPackage.serializer(), text)
     }
 }

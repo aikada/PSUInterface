@@ -5,8 +5,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class StatusItem(
     val channels: Array<Int>,
-    var profile: String?,
-    var profileType: String?,
-    var paused: Boolean?,
-    var status: StatusFields?
+    val profile: String?,
+    val profileType: String?,
+    val paused: Boolean? = null,
+    val status: StatusFields? = null
 )

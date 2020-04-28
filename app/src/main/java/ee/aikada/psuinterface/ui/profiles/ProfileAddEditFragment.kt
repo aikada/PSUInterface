@@ -17,7 +17,6 @@ import ee.aikada.psuinterface.models.enums.ProfileType
 import ee.aikada.psuinterface.ui.profiles.profileTypeFragments.CCFragment
 import ee.aikada.psuinterface.ui.profiles.profileTypeFragments.CVFragment
 import ee.aikada.psuinterface.ui.profiles.profileTypeFragments.GraphFragment
-import ee.aikada.psuinterface.ui.settings.SettingsFragment
 
 
 class ProfileAddEditFragment(var profile: ProfileDTO? = null) : Fragment() {
@@ -37,11 +36,15 @@ class ProfileAddEditFragment(var profile: ProfileDTO? = null) : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        if (profile == null) profile = ProfileDTO()
+
         return inflater.inflate(R.layout.fragment_profile_add_edit, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(this).get(ProfileAddEditViewModel::class.java)
+        viewModel.profile = profile
         activity?.title = if (profile != null) profile!!.profileName else "New profile"
         setupProfileTypeSpinner(view)
     }
@@ -50,10 +53,12 @@ class ProfileAddEditFragment(var profile: ProfileDTO? = null) : Fragment() {
         mSpinnerProfileType = view.findViewById(R.id.spinner_profile_add_edit)
         mSpinnerProfileType.adapter =
             ArrayAdapter(context!!, android.R.layout.simple_list_item_1, ProfileType.values())
+        mSpinnerProfileType.setSelection(profile!!.profileType.ordinal)
         mSpinnerProfileType.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                mSelectedProfileType = ProfileType.CC
+                Log.d(TAG, "onNothingSelected")
+                mSelectedProfileType = if (profile != null) profile!!.profileType else ProfileType.CV
             }
 
             override fun onItemSelected(
@@ -72,22 +77,15 @@ class ProfileAddEditFragment(var profile: ProfileDTO? = null) : Fragment() {
     private fun setProfileTypeFragment() {
         val fragmentManagerHelper = FragmentManagerHelper(childFragmentManager, R.id.frameLayout_profileType_container)
         when (mSelectedProfileType) {
-            ProfileType.CC -> {
-                fragmentManagerHelper.replaceCurrentFragmentWith(CCFragment.newInstance())
-            }
             ProfileType.CV -> {
-                fragmentManagerHelper.replaceCurrentFragmentWith(CVFragment.newInstance())
+                fragmentManagerHelper.replaceCurrentFragmentWith(CVFragment.newInstance(profile))
+            }
+            ProfileType.CC -> {
+                fragmentManagerHelper.replaceCurrentFragmentWith(CCFragment.newInstance(profile))
             }
             ProfileType.Graph -> {
-                fragmentManagerHelper.replaceCurrentFragmentWith(GraphFragment.newInstance())
+                fragmentManagerHelper.replaceCurrentFragmentWith(GraphFragment.newInstance(profile))
             }
         }
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ProfileAddEditViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
 }

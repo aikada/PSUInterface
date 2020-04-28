@@ -4,12 +4,12 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class StatusFields(
-    var voltage: Float = 0F,
-    var current: Float = 0F,
-    var limit: Float?,
-    var limitType: String?,
-    var resistance: Float?,
-    var startTime: String?,
-    var duration_ms: Long?,
-    var runtime_ms: Long?
+    val voltage: Float = 0F,
+    val current: Float = 0F,
+    val limit: Float?,
+    val limitType: String?,
+    val resistance: Float?,
+    val startTime: String?,
+    val duration_ms: Long?,
+    val runtime_ms: Long?
 )

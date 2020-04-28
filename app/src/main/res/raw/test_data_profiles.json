@@ -1,0 +1,90 @@
+{
+  "profiles": [
+    {
+      "name": "profile 1",
+      "group": "profile group 1",
+      "type": "Graph",
+      "duration_ms": null,
+      "graph": {
+        "X": {
+          "value": "time",
+          "offset": 0,
+          "scale": 5
+        },
+        "Y": [
+          {
+            "value": "voltage",
+            "offset": 0,
+            "scale": 1,
+            "points": [
+              [0, 0],
+              [1, 10]
+            ]
+          },
+          {
+            "value": "current limit",
+            "offset": 0,
+            "scale": 1,
+            "points": [
+              [0, 10],
+              [1, 10],
+              [1.001, 1]
+            ]
+          },
+          {
+            "value": "resistance",
+            "offset": 0,
+            "scale": 1,
+            "points": [
+              [0, 1]
+            ]
+          }
+        ]
+      },
+      "jumps": [
+        {
+          "type": "if",
+          "target": {
+            "group": "profile group 1",
+            "name": "profile 2"
+          },
+          "value": "power",
+          "comp": ">",
+          "limit": 10.0
+        },
+        {
+          "type": "while",
+          "target": {
+            "group": "profile group 1",
+            "name": "profile 3"
+          },
+          "value": "ADC1",
+          "comp": ">",
+          "limit": 0.333
+        }
+      ]
+    },
+    {
+      "name": "profile 2",
+      "group": "profile group 1",
+      "type": "CV",
+      "duration_ms": null,
+      "value": 10,
+      "limitValue": 2,
+      "resistance": 0,
+      "jumps": [
+
+      ]
+    },
+    {
+      "name": "profile 3",
+      "group": "profile group 1",
+      "type": "CC",
+      "duration_ms": 1234567,
+      "value": 10,
+      "limitValue": 2,
+      "resistance": 2,
+      "latchOff": true
+    }
+  ]
+}

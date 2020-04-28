@@ -1,6 +1,7 @@
 package ee.aikada.psuinterface.ui.profiles.componentFragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,7 @@ class SetParameterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d("value for field", value.toString())
         val v = inflater.inflate(R.layout.fragment_set_parameter, container, false)
         v.findViewById<TextView>(R.id.fragment_set_parameter_name).text = title
         v.findViewById<TextView>(R.id.fragment_set_parameter_value).setText(value.toString())

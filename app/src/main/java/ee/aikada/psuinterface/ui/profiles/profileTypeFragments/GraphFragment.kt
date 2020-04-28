@@ -36,7 +36,7 @@ class GraphFragment(profile: ProfileDTO? = null) : Fragment() {
 
     companion object {
         fun newInstance() = GraphFragment()
-        fun newInstance(profile: ProfileDTO) =
+        fun newInstance(profile: ProfileDTO?) =
             GraphFragment(profile)
     }
 }
