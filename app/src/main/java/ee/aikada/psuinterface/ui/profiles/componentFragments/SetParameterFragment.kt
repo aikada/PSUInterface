@@ -40,7 +40,6 @@ class SetParameterFragment : Fragment() {
     }
 
     companion object {
-        @JvmStatic
         fun newInstance(title: String, value: Float, unit: String) =
             SetParameterFragment().apply {
                 arguments = Bundle().apply {
@@ -50,4 +49,5 @@ class SetParameterFragment : Fragment() {
                 }
             }
     }
+
 }

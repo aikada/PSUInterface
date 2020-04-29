@@ -1,6 +1,5 @@
 package ee.aikada.psuinterface.models.enums
 
-import ee.aikada.psuinterface.DTO.GraphXDTO
 import ee.aikada.psuinterface.DTO.ProfileDTO
 import ee.aikada.psuinterface.DTO.StatusFieldsDTO
 import ee.aikada.psuinterface.helpers.Format
@@ -18,14 +17,9 @@ enum class ProfileType(val profileTypeName: String) {
     Graph("Graph") {
         override fun formatField1(value: ProfileDTO): String = Format.toGraphVoltage(value)
         override fun formatField2(value: ProfileDTO): String = Format.toGraphCurrent(value)
-//        override fun formatField4(value: ProfileDTO): String = Format.toGraphResistance(value)
-
-//            value.graph!!.x.value!!.longName
-
-//        override fun formatField3(value: StatusFieldsDTO) = "Graph"
     };
 
-    // status view
+    // status view formatting
     open fun formatField1(value: StatusFieldsDTO): String = Format.toVoltage(value.voltage)
     open fun formatField2(value: StatusFieldsDTO): String = Format.toCurrent(value.current)
     open fun formatField3(value: StatusFieldsDTO): String =
@@ -36,7 +30,7 @@ enum class ProfileType(val profileTypeName: String) {
     open fun formatTimeField2(value: StatusFieldsDTO): String = getTimeLeftFormat(value)
     open fun formatTimeField3(value: StatusFieldsDTO): String = getEstimatedTimePeriodFormat(value)
 
-    // profile view
+    // profile view formatting
     open fun formatField1(value: ProfileDTO): String = Format.toVoltage(value.voltage)
     open fun formatField2(value: ProfileDTO): String = Format.toCurrent(value.current)
     open fun formatField3(value: ProfileDTO): String = " "

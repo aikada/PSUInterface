@@ -8,8 +8,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import ee.aikada.psuinterface.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_TITLE = "param1"
 private const val ARG_TIME = "param2"
 
@@ -19,7 +17,6 @@ private const val ARG_TIME = "param2"
  * create an instance of this fragment.
  */
 class SetTimePropertyFragment : Fragment() {
-    // TODO: Rename and change types of parameters
     private var title: String? = null
     private var time: String? = null
 
@@ -42,7 +39,6 @@ class SetTimePropertyFragment : Fragment() {
     }
 
     companion object {
-        @JvmStatic
         fun newInstance(title: String, time: String) =
             SetTimePropertyFragment().apply {
                 arguments = Bundle().apply {

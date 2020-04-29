@@ -1,38 +1,57 @@
 package ee.aikada.psuinterface.ui.profiles.profileTypeFragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import ee.aikada.psuinterface.DTO.ProfileDTO
 import ee.aikada.psuinterface.R
 import ee.aikada.psuinterface.helpers.FragmentManagerHelper
+import ee.aikada.psuinterface.ui.profiles.ProfileAddEditViewModel
 
-class GraphFragment(profile: ProfileDTO? = null) : Fragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+class GraphFragment(val profile: ProfileDTO? = null) : Fragment() {
+    val TAG = GraphFragment::class.java.simpleName
+    private lateinit var viewModel: ProfileAddEditViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        viewModel = ViewModelProvider(requireActivity()).get(ProfileAddEditViewModel::class.java)
         val v = inflater.inflate(R.layout.fragment_profile_type_container, container, false)
+        addFragmentsForProfile()
+
+        return v
+    }
+
+    private fun addFragmentsForProfile() {
         val fragmentManagerHelper =
             FragmentManagerHelper(
                 childFragmentManager,
                 R.id.linearLayout_fragment_profile_type_container
-            );
+            )
 
-        fragmentManagerHelper.addSetParameterFragment("Voltage", 0.0F, "V")
-        fragmentManagerHelper.addSetParameterFragment("Current", 0.0F, "A")
-        fragmentManagerHelper.addSetTimePropertyFragment("Time", "00:00:00")
-        fragmentManagerHelper.addSetParameterFragment("Emulated internal resistance", 0.0F, "Ω")
+        val x = profile!!.graph!!.x
+        fragmentManagerHelper.addSetParameterGraphXFragment(
+            x.value!!.displayName,
+            0.0F,
+            x.value!!.unit,
+            x
+        )
+        for (y in profile!!.graph!!.y) {
+            fragmentManagerHelper.addSetParameterGraphFragment(
+                y.value!!.displayName,
+                0.0F,
+                y.value!!.unit,
+                y
+            )
+        }
         fragmentManagerHelper.addSetBooleanFragment("Disable output when limit exceeded", false)
-
-        return v
     }
+
 
     companion object {
         fun newInstance() = GraphFragment()

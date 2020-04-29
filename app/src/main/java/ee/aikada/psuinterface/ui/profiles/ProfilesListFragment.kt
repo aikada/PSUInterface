@@ -16,7 +16,6 @@ import ee.aikada.psuinterface.controllers.ProfileController
 
 class ProfilesListFragment(groupName: String? = null) : Fragment() {
 
-    private lateinit var viewModel: ProfilesViewModel
     val TAG = ProfilesListFragment::class.java.simpleName
     private var groupName: String? = null
     private var recyclerAdapter: ProfilesRecyclerViewAdapter? = null
@@ -56,11 +55,6 @@ class ProfilesListFragment(groupName: String? = null) : Fragment() {
             layoutManager = LinearLayoutManager(activity)
             adapter = recyclerAdapter
         }
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ProfilesViewModel::class.java)
     }
 
     private fun openProfile(profile: ProfileDTO? = null) {

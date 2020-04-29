@@ -14,9 +14,6 @@ import ee.aikada.psuinterface.ProfileActivity
 import ee.aikada.psuinterface.R
 import ee.aikada.psuinterface.controllers.StatusController
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class StatusFragment : Fragment() {
     private val TAG = StatusFragment::class.java.simpleName
     private var recyclerAdapter: StatusRecyclerViewAdapter? = null
@@ -26,17 +23,10 @@ class StatusFragment : Fragment() {
         StatusItemDTO("CH2")
     )
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        retainInstance = true
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_status, container, false)
     }
 
@@ -46,12 +36,10 @@ class StatusFragment : Fragment() {
     }
 
     private fun setUpRecyclerView(view: View) {
-        val statusController: StatusController =
-            StatusController(activity!!.applicationContext)
+        val statusController = StatusController(activity!!.applicationContext)
         statusItems = statusController.getStatusItemDTOs()
-        recyclerAdapter = StatusRecyclerViewAdapter(statusItems) { channel -> openProfileActivity(channel) };
-
-        Log.d(TAG, statusItems.toString())
+        recyclerAdapter =
+            StatusRecyclerViewAdapter(statusItems) { channel -> openProfileActivity(channel) };
         view.findViewById<RecyclerView>(R.id.recycler_status_items).apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = recyclerAdapter

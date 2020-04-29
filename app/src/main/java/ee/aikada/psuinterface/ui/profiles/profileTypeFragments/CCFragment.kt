@@ -23,6 +23,12 @@ class CCFragment(val profile: ProfileDTO? = null) : Fragment() {
     ): View? {
         val v = inflater.inflate(R.layout.fragment_profile_type_container, container, false)
         viewModel = ViewModelProvider(this).get(ProfileAddEditViewModel::class.java)
+        addFragmentsForProfile(profile!!)
+
+        return v
+    }
+
+    private fun addFragmentsForProfile(profile: ProfileDTO) {
         val fragmentManagerHelper =
             FragmentManagerHelper(
                 childFragmentManager,
@@ -32,10 +38,15 @@ class CCFragment(val profile: ProfileDTO? = null) : Fragment() {
         fragmentManagerHelper.addSetParameterFragment("Voltage limit", profile!!.voltageLimit, "V")
         fragmentManagerHelper.addSetParameterFragment("Current", profile.current, "A")
         fragmentManagerHelper.addSetTimePropertyFragment("Duration", profile.duration)
-        fragmentManagerHelper.addSetParameterFragment("Emulated internal resistance", profile.resistance, "Ω")
-        fragmentManagerHelper.addSetBooleanFragment("Disable output when limit exceeded", profile.latchOff)
-
-        return v
+        fragmentManagerHelper.addSetParameterFragment(
+            "Emulated internal resistance",
+            profile.resistance,
+            "Ω"
+        )
+        fragmentManagerHelper.addSetBooleanFragment(
+            "Disable output when limit exceeded",
+            profile.latchOff
+        )
     }
 
 

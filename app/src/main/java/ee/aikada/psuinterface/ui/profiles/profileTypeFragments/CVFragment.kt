@@ -11,28 +11,35 @@ import ee.aikada.psuinterface.helpers.FragmentManagerHelper
 
 class CVFragment(val profile: ProfileDTO? = null) : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val v = inflater.inflate(R.layout.fragment_profile_type_container, container, false)
+        addFragmentsForProfile(profile!!)
+
+        return v
+    }
+
+    private fun addFragmentsForProfile(profile: ProfileDTO) {
         val fragmentManagerHelper =
             FragmentManagerHelper(
                 childFragmentManager,
                 R.id.linearLayout_fragment_profile_type_container
-            );
+            )
 
-        fragmentManagerHelper.addSetParameterFragment("Voltage", profile!!.voltage, "V")
+        fragmentManagerHelper.addSetParameterFragment("Voltage", profile.voltage, "V")
         fragmentManagerHelper.addSetParameterFragment("Current limit", profile.currentLimit, "A")
         fragmentManagerHelper.addSetTimePropertyFragment("Duration", profile.duration)
-        fragmentManagerHelper.addSetParameterFragment("Emulated internal resistance", profile.resistance, "Ω")
-        fragmentManagerHelper.addSetBooleanFragment("Disable output when limit exceeded", profile.latchOff)
-
-        return v
+        fragmentManagerHelper.addSetParameterFragment(
+            "Emulated internal resistance",
+            profile.resistance,
+            "Ω"
+        )
+        fragmentManagerHelper.addSetBooleanFragment(
+            "Disable output when limit exceeded",
+            profile.latchOff
+        )
     }
 
     companion object {

@@ -8,8 +8,6 @@ import android.widget.Switch
 import androidx.fragment.app.Fragment
 import ee.aikada.psuinterface.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_TITLE = "param1"
 private const val ARG_BOOLEAN = "param2"
 
@@ -39,7 +37,6 @@ class SetBooleanFragment : Fragment() {
     }
 
     companion object {
-        @JvmStatic
         fun newInstance(title: String, bool: Boolean) =
             SetBooleanFragment().apply {
                 arguments = Bundle().apply {

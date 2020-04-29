@@ -1,15 +1,14 @@
 package ee.aikada.psuinterface.DTO
 
+import android.os.Parcelable
 import ee.aikada.psuinterface.models.enums.GraphType
+import kotlinx.android.parcel.Parcelize
 
-data class GraphDTO (var x: GraphXDTO, var y: List<GraphYDTO>) {
+data class GraphDTO (var x: GraphXDTO, var y: List<GraphYDTO>)
 
-}
+@Parcelize
+data class GraphXDTO(var value: GraphType?, var offSet: Float, var scale: Float) : Parcelable
 
-data class GraphXDTO(var value: GraphType?, var offSet: Float, var scale: Float) {
-
-}
-
-data class GraphYDTO(var value: GraphType?, var offSet: Float, var scale: Float, var points: List<Array<Float>>) {
-
-}
+@Parcelize
+data class GraphYDTO(var value: GraphType?, var offSet: Float, var scale: Float, var points: MutableList<Array<Float>>) :
+    Parcelable

@@ -51,7 +51,7 @@ object ProfileMapper {
         graphY.forEach {
             val graphYDTO = GraphYDTO(
                 Util.graphTypeFor(it.value), it.offset, it.scale,
-                it.points.toList()
+                it.points.toMutableList()
             )
             graphYDTOList.add(graphYDTO)
         }

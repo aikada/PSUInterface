@@ -14,12 +14,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import kotlinx.serialization.Serializable
 
-
 private lateinit var appBarConfiguration: AppBarConfiguration
-
-@Serializable
-data class Data(val a: Int, val b: String = "42")
-
 
 class MainActivity : AppCompatActivity() {
     private val TAG = MainActivity::class.java.simpleName
@@ -67,22 +62,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         Log.d(TAG, "onBackPressed")
-        var count = supportFragmentManager.backStackEntryCount
+        val count = supportFragmentManager.backStackEntryCount
         if (count == 0) {
             super.onBackPressed()
         } else {
             supportFragmentManager.popBackStack()
         }
-//        when (supportFragmentManager.findFragmentById(R.id.container)) {
-//            is ProfilesFragment -> {
-//                supportFragmentManager.beginTransaction()
-//                    .replace(R.id.container, ProfileGroupsFragment.newInstance())
-//                    .commitNow()
-//            }
-//            else -> {
-//                super.onBackPressed()
-//            }
-//        }
     }
 
 }

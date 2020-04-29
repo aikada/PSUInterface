@@ -43,8 +43,9 @@ class ProfileAddEditFragment(var profile: ProfileDTO? = null) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ProfileAddEditViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(ProfileAddEditViewModel::class.java)
         viewModel.profile = profile
+
         activity?.title = if (profile != null) profile!!.profileName else "New profile"
         setupProfileTypeSpinner(view)
     }
@@ -57,7 +58,6 @@ class ProfileAddEditFragment(var profile: ProfileDTO? = null) : Fragment() {
         mSpinnerProfileType.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                Log.d(TAG, "onNothingSelected")
                 mSelectedProfileType = if (profile != null) profile!!.profileType else ProfileType.CV
             }
 

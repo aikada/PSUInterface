@@ -2,9 +2,9 @@ package ee.aikada.psuinterface.helpers
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import ee.aikada.psuinterface.ui.profiles.componentFragments.SetBooleanFragment
-import ee.aikada.psuinterface.ui.profiles.componentFragments.SetParameterFragment
-import ee.aikada.psuinterface.ui.profiles.componentFragments.SetTimePropertyFragment
+import ee.aikada.psuinterface.DTO.GraphXDTO
+import ee.aikada.psuinterface.DTO.GraphYDTO
+import ee.aikada.psuinterface.ui.profiles.componentFragments.*
 
 class FragmentManagerHelper(
     private val fragmentManagerToUse: FragmentManager,
@@ -54,5 +54,31 @@ class FragmentManagerHelper(
                 fragment
             )
             .commitNow()
+    }
+
+    fun addSetParameterGraphFragment(title: String, value: Float?, unit: String, graphYDTO: GraphYDTO): SetParameterGraphFragment {
+        val parameterFragmentInstance =
+            SetParameterGraphFragment.newInstance(
+                title,
+                value ?: 0F,
+                unit,
+                graphYDTO
+            )
+        fragmentManagerToUse.beginTransaction()
+            .add(parentLayoutId, parameterFragmentInstance).commitNow()
+        return parameterFragmentInstance
+    }
+
+    fun addSetParameterGraphXFragment(title: String, value: Float?, unit: String, graphXDTO: GraphXDTO): SetParameterGraphXFragment {
+        val parameterFragmentInstance =
+            SetParameterGraphXFragment.newInstance(
+                title,
+                value ?: 0F,
+                unit,
+                graphXDTO
+            )
+        fragmentManagerToUse.beginTransaction()
+            .add(parentLayoutId, parameterFragmentInstance).commitNow()
+        return parameterFragmentInstance
     }
 }

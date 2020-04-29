@@ -5,43 +5,31 @@
     android:layout_height="wrap_content"
     tools:context=".ui.profiles.profileTypeFragments.GraphFragment"
     android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hello_blank_fragment" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hello_blank_fragment" />
-    </LinearLayout>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
-    <TextView
-        android:id="@+id/fragment_set_parameter_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Parameter"
+        android:text="Adding points for"
+        android:padding="@dimen/profile_card_padding"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         tools:layout_editor_absoluteX="176dp"
         tools:layout_editor_absoluteY="58dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/fragment_set_parameter_graph_x_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parameter"
+            android:padding="@dimen/profile_card_padding"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            tools:layout_editor_absoluteX="176dp"
+            tools:layout_editor_absoluteY="58dp" />
         <EditText
-            android:id="@+id/fragment_set_parameter_value"
+            android:id="@+id/fragment_set_parameter_graph_x_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -53,7 +41,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <TextView
-            android:id="@+id/fragment_set_parameter_unit"
+            android:id="@+id/fragment_set_parameter_graph_x_unit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="12dp"
@@ -61,12 +49,6 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             tools:layout_editor_absoluteX="176dp"
             tools:layout_editor_absoluteY="58dp" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add" />
 
     </LinearLayout>
 
