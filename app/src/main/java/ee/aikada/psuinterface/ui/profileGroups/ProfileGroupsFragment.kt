@@ -19,7 +19,6 @@ class ProfileGroupsFragment : Fragment() {
     val TAG = ProfileGroupsFragment::class.java.simpleName
     private var recyclerAdapter: ProfileGroupsRecyclerViewAdapter? = null
 
-    //    private lateinit var viewModel: ProfileGroupsViewModel
     var profileGroups: List<ProfileGroupDTO> = listOf()
 
     override fun onCreateView(
@@ -51,7 +50,7 @@ class ProfileGroupsFragment : Fragment() {
         }
     }
 
-    fun openProfileGroup(groupName: String) {
+    private fun openProfileGroup(groupName: String) {
         Log.d(TAG, "openProfileGroup " + groupName + activity)
 
         if (activity is ProfileActivity) {

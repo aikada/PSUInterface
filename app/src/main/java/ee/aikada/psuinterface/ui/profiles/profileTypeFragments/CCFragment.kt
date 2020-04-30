@@ -35,7 +35,7 @@ class CCFragment(val profile: ProfileDTO? = null) : Fragment() {
                 R.id.linearLayout_fragment_profile_type_container
             )
 
-        fragmentManagerHelper.addSetParameterFragment("Voltage limit", profile!!.voltageLimit, "V")
+        fragmentManagerHelper.addSetParameterFragment("Voltage limit", profile.voltageLimit, "V")
         fragmentManagerHelper.addSetParameterFragment("Current", profile.current, "A")
         fragmentManagerHelper.addSetTimePropertyFragment("Duration", profile.duration)
         fragmentManagerHelper.addSetParameterFragment(

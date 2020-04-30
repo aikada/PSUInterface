@@ -63,9 +63,10 @@ class SetParameterGraphFragment : Fragment() {
     }
 
     fun addPoint() {
-        val x = viewModel.getGraphX()!!.value.toString()
+        val x = if(viewModel.getGraphX()!!.value != null) viewModel.getGraphX()!!.value.toString() else "0.0"
         val y = mEditTextValue!!.text.toString()
 
+        Log.d(TAG, "$x , $y")
         val point = arrayOf(x.toFloat(), y.toFloat())
         graphYDTO!!.points.add(point)
         setUpRecyclerView(view!!)

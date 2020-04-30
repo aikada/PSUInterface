@@ -11,10 +11,8 @@ data class ProfileDTO(
     var current: Float? = null
     var voltageLimit: Float? = null
     var currentLimit: Float? = null
-
     var resistance: Float? = null
     var duration: String? = null
     var latchOff: Boolean? = null
-
     var graph: GraphDTO? = null
 }

@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ee.aikada.psuinterface.DTO.ProfileDTO
@@ -14,16 +13,11 @@ import ee.aikada.psuinterface.R
 import ee.aikada.psuinterface.controllers.ProfileController
 
 
-class ProfilesListFragment(groupName: String? = null) : Fragment() {
+class ProfilesListFragment(private var groupName: String? = null) : Fragment() {
 
     val TAG = ProfilesListFragment::class.java.simpleName
-    private var groupName: String? = null
     private var recyclerAdapter: ProfilesRecyclerViewAdapter? = null
     var profiles: List<ProfileDTO> = listOf()
-
-    init {
-        this.groupName = groupName
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,17 +32,16 @@ class ProfilesListFragment(groupName: String? = null) : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val profileController =
             ProfileController(activity!!.applicationContext)
-        if (groupName != null) {
-            profiles = profileController.getProfilesForGroup(groupName!!)
-            setUpRecyclerView(view)
-        }
+        if (groupName == null) return
+        profiles = profileController.getProfilesForGroup(groupName!!)
+        setUpRecyclerView(view)
     }
 
     private fun setUpRecyclerView(view: View) {
         Log.d(TAG, "setUpRecyclerView: " + profiles)
 
-        recyclerAdapter = ProfilesRecyclerViewAdapter(profiles) {
-                profile -> openProfile(profile as ProfileDTO)
+        recyclerAdapter = ProfilesRecyclerViewAdapter(profiles) { profile ->
+            openProfile(profile as ProfileDTO)
         }
 
         view.findViewById<RecyclerView>(R.id.recycler_profiles).apply {

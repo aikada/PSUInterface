@@ -10,8 +10,8 @@ class ProfileAddEditViewModel : ViewModel() {
     var channelName: String? = null
     var groupName: String? = null
     var profile: ProfileDTO? = null
-
     private val mGraphX = MutableLiveData<String>()
+
     fun setGraphX(name: String) {
         mGraphX.value = name
     }
