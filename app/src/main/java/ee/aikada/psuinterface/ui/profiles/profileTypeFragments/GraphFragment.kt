@@ -1,20 +1,15 @@
 package ee.aikada.psuinterface.ui.profiles.profileTypeFragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import ee.aikada.psuinterface.DTO.GraphDTO
-import ee.aikada.psuinterface.DTO.GraphXDTO
-import ee.aikada.psuinterface.DTO.GraphYDTO
-import ee.aikada.psuinterface.DTO.ProfileDTO
 import ee.aikada.psuinterface.R
 import ee.aikada.psuinterface.helpers.FragmentManagerHelper
 import ee.aikada.psuinterface.helpers.Util
-import ee.aikada.psuinterface.models.enums.GraphType
+import ee.aikada.psuinterface.models.DTO.ProfileDTO
 import ee.aikada.psuinterface.ui.profiles.ProfileAddEditViewModel
 
 class GraphFragment(val profile: ProfileDTO? = null) : Fragment() {

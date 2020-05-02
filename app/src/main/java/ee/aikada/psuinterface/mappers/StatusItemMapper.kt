@@ -1,14 +1,12 @@
 package ee.aikada.psuinterface.mappers
 
-import ee.aikada.psuinterface.DTO.StatusFieldsDTO
-import ee.aikada.psuinterface.DTO.StatusItemDTO
 import ee.aikada.psuinterface.helpers.Format
+import ee.aikada.psuinterface.models.DTO.StatusFieldsDTO
+import ee.aikada.psuinterface.models.DTO.StatusItemDTO
 import ee.aikada.psuinterface.models.StatusFields
 import ee.aikada.psuinterface.models.StatusItem
 import ee.aikada.psuinterface.models.enums.LimitType
 import ee.aikada.psuinterface.models.enums.ProfileType
-import java.text.SimpleDateFormat
-import java.util.*
 
 object StatusItemMapper {
     fun mapStatusItem(statusItem: StatusItem): StatusItemDTO {

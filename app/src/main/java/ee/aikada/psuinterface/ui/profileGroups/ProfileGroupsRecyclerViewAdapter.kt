@@ -7,8 +7,8 @@ import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import ee.aikada.psuinterface.DTO.ProfileGroupDTO
 import ee.aikada.psuinterface.R
+import ee.aikada.psuinterface.models.DTO.ProfileGroupDTO
 
 
 class ProfileGroupsRecyclerViewAdapter(private val items: List<ProfileGroupDTO>, private val listener : (Any) -> Unit) :

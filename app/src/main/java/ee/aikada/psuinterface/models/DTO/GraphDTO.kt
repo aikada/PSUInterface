@@ -1,4 +1,4 @@
-package ee.aikada.psuinterface.DTO
+package ee.aikada.psuinterface.models.DTO
 
 import android.os.Parcelable
 import ee.aikada.psuinterface.models.enums.GraphType

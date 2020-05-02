@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ee.aikada.psuinterface.DTO.ProfileGroupDTO
 import ee.aikada.psuinterface.ProfileActivity
 import ee.aikada.psuinterface.R
 import ee.aikada.psuinterface.controllers.ProfileController
+import ee.aikada.psuinterface.models.DTO.ProfileGroupDTO
 import ee.aikada.psuinterface.ui.profiles.ProfilesListFragment
 
 class ProfileGroupsFragment : Fragment() {

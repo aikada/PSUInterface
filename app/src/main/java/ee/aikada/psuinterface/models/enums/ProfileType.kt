@@ -1,8 +1,8 @@
 package ee.aikada.psuinterface.models.enums
 
-import ee.aikada.psuinterface.DTO.ProfileDTO
-import ee.aikada.psuinterface.DTO.StatusFieldsDTO
 import ee.aikada.psuinterface.helpers.Format
+import ee.aikada.psuinterface.models.DTO.ProfileDTO
+import ee.aikada.psuinterface.models.DTO.StatusFieldsDTO
 
 enum class ProfileType(val profileTypeName: String) {
     CV("CV") {

@@ -2,11 +2,11 @@ package ee.aikada.psuinterface.controllers
 
 import android.content.Context
 import android.util.Log
-import ee.aikada.psuinterface.DTO.ProfileDTO
-import ee.aikada.psuinterface.DTO.ProfileGroupDTO
 import ee.aikada.psuinterface.R
 import ee.aikada.psuinterface.mappers.ProfileGroupMapper
 import ee.aikada.psuinterface.mappers.ProfileMapper
+import ee.aikada.psuinterface.models.DTO.ProfileDTO
+import ee.aikada.psuinterface.models.DTO.ProfileGroupDTO
 import ee.aikada.psuinterface.models.ProfileGroups
 import ee.aikada.psuinterface.models.Profiles
 import ee.aikada.psuinterface.models.enums.ProfileType

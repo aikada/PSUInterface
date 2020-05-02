@@ -1,9 +1,9 @@
 package ee.aikada.psuinterface.helpers
 
-import ee.aikada.psuinterface.DTO.GraphDTO
-import ee.aikada.psuinterface.DTO.GraphXDTO
-import ee.aikada.psuinterface.DTO.GraphYDTO
-import ee.aikada.psuinterface.DTO.ProfileDTO
+import ee.aikada.psuinterface.models.DTO.GraphDTO
+import ee.aikada.psuinterface.models.DTO.GraphXDTO
+import ee.aikada.psuinterface.models.DTO.GraphYDTO
+import ee.aikada.psuinterface.models.DTO.ProfileDTO
 import ee.aikada.psuinterface.models.enums.GraphType
 
 object Util {

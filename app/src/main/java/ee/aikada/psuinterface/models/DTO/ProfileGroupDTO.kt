@@ -1,4 +1,4 @@
-package ee.aikada.psuinterface.DTO
+package ee.aikada.psuinterface.models.DTO
 
 data class ProfileGroupDTO(
     var profileGroupName: String = "<template>",

@@ -10,13 +10,9 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import ee.aikada.psuinterface.DTO.GraphDTO
-import ee.aikada.psuinterface.DTO.GraphXDTO
-import ee.aikada.psuinterface.DTO.GraphYDTO
-import ee.aikada.psuinterface.DTO.ProfileDTO
 import ee.aikada.psuinterface.R
 import ee.aikada.psuinterface.helpers.FragmentManagerHelper
-import ee.aikada.psuinterface.models.enums.GraphType
+import ee.aikada.psuinterface.models.DTO.ProfileDTO
 import ee.aikada.psuinterface.models.enums.ProfileType
 import ee.aikada.psuinterface.ui.profiles.profileTypeFragments.CCFragment
 import ee.aikada.psuinterface.ui.profiles.profileTypeFragments.CVFragment

@@ -11,8 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ee.aikada.psuinterface.DTO.GraphYDTO
 import ee.aikada.psuinterface.R
+import ee.aikada.psuinterface.models.DTO.GraphYDTO
 import ee.aikada.psuinterface.ui.profiles.ProfileAddEditViewModel
 
 private const val ARG_TITLE = "param1"

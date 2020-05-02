@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ee.aikada.psuinterface.DTO.ProfileDTO
 import ee.aikada.psuinterface.R
 import ee.aikada.psuinterface.helpers.FragmentManagerHelper
+import ee.aikada.psuinterface.models.DTO.ProfileDTO
 
 class CVFragment(val profile: ProfileDTO? = null) : Fragment() {
 

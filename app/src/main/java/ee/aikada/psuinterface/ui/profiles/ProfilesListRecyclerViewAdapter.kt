@@ -1,14 +1,12 @@
 package ee.aikada.psuinterface.ui.profiles
 
-import android.graphics.Typeface
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import ee.aikada.psuinterface.DTO.ProfileDTO
 import ee.aikada.psuinterface.R
-import ee.aikada.psuinterface.models.enums.ProfileType
+import ee.aikada.psuinterface.models.DTO.ProfileDTO
 
 
 class ProfilesRecyclerViewAdapter(private val items: List<ProfileDTO>, private val listener : (Any) -> Unit) :

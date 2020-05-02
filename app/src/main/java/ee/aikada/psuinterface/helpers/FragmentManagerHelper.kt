@@ -2,8 +2,8 @@ package ee.aikada.psuinterface.helpers
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import ee.aikada.psuinterface.DTO.GraphXDTO
-import ee.aikada.psuinterface.DTO.GraphYDTO
+import ee.aikada.psuinterface.models.DTO.GraphXDTO
+import ee.aikada.psuinterface.models.DTO.GraphYDTO
 import ee.aikada.psuinterface.ui.profiles.componentFragments.*
 
 class FragmentManagerHelper(

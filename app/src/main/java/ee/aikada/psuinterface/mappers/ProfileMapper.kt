@@ -1,11 +1,11 @@
 package ee.aikada.psuinterface.mappers
 
-import ee.aikada.psuinterface.DTO.GraphDTO
-import ee.aikada.psuinterface.DTO.GraphXDTO
-import ee.aikada.psuinterface.DTO.GraphYDTO
-import ee.aikada.psuinterface.DTO.ProfileDTO
 import ee.aikada.psuinterface.helpers.Format
 import ee.aikada.psuinterface.helpers.Util
+import ee.aikada.psuinterface.models.DTO.GraphDTO
+import ee.aikada.psuinterface.models.DTO.GraphXDTO
+import ee.aikada.psuinterface.models.DTO.GraphYDTO
+import ee.aikada.psuinterface.models.DTO.ProfileDTO
 import ee.aikada.psuinterface.models.Graph
 import ee.aikada.psuinterface.models.GraphX
 import ee.aikada.psuinterface.models.GraphY

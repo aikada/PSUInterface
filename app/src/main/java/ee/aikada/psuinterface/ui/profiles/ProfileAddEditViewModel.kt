@@ -3,7 +3,7 @@ package ee.aikada.psuinterface.ui.profiles
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import ee.aikada.psuinterface.DTO.ProfileDTO
+import ee.aikada.psuinterface.models.DTO.ProfileDTO
 
 
 class ProfileAddEditViewModel : ViewModel() {

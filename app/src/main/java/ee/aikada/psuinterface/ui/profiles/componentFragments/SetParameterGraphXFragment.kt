@@ -11,8 +11,8 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import ee.aikada.psuinterface.DTO.GraphXDTO
 import ee.aikada.psuinterface.R
+import ee.aikada.psuinterface.models.DTO.GraphXDTO
 import ee.aikada.psuinterface.ui.profiles.ProfileAddEditViewModel
 
 

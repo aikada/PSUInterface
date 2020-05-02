@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ee.aikada.psuinterface.DTO.StatusItemDTO
 import ee.aikada.psuinterface.ProfileActivity
 import ee.aikada.psuinterface.R
 import ee.aikada.psuinterface.controllers.StatusController
+import ee.aikada.psuinterface.models.DTO.StatusItemDTO
 
 class StatusFragment : Fragment() {
     private val TAG = StatusFragment::class.java.simpleName

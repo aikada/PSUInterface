@@ -1,9 +1,9 @@
 package ee.aikada.psuinterface.controllers
 
 import android.content.Context
-import ee.aikada.psuinterface.DTO.StatusItemDTO
 import ee.aikada.psuinterface.R
 import ee.aikada.psuinterface.mappers.StatusItemMapper
+import ee.aikada.psuinterface.models.DTO.StatusItemDTO
 import ee.aikada.psuinterface.models.StatusPackage
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
