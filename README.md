@@ -10,7 +10,7 @@ Android user interface for a programmable power supply unit.
 https://drive.google.com/drive/folders/1eTlyPxmxy4LhenANXnILYtnRvPMb_cSC
 
 ## UXPin interactive graphical prototype:
-https://preview.uxpin.com/4c9e837b0ef1bba68c0adfca1ccbbbdf9e6c7e97#/pages/12661 9289/simulate/no-panels
+https://preview.uxpin.com/4c9e837b0ef1bba68c0adfca1ccbbbdf9e6c7e97#/pages/126619289/simulate/no-panels
 
 ## Future plans:
 * Bluetooth Low Energy conncetion. BLE is supported since Android 4.3, but due to stability upgrades the author has chosen to support Android version 5.0 (Lollipop) minimum.
