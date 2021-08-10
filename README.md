@@ -4,7 +4,7 @@ Android user interface for a programmable power supply unit.
 
 ## Currently able to:
 * Navigate between different views, display fragments for Status (of currently active power supply ports) and Profiles (for CC/CV/charging, can be connfigured, but not yet saved).
-* Receive data in JSON format, parse them into model objects, then convert for display, and display in a more userfriendly way.
+* Process test data given in JSON format, parse the data into model objects, then convert for display, and display in a more userfriendly way.
 
 ## App architecture:
 https://drive.google.com/drive/folders/1eTlyPxmxy4LhenANXnILYtnRvPMb_cSC
