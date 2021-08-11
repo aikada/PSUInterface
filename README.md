@@ -7,7 +7,7 @@ Android user interface for a programmable power supply unit.
 * Process test data given in JSON format, parse the data into model objects, then convert for display, and display in a more userfriendly way.
 
 ## App architecture:
-https://drive.google.com/drive/folders/1eTlyPxmxy4LhenANXnILYtnRvPMb_cSC
+https://drive.google.com/file/d/1HZfxQv4HTUZwFBxjCP6zdwr-70omsbqR/view?usp=sharing
 
 ## UXPin interactive graphical prototype:
 https://preview.uxpin.com/4c9e837b0ef1bba68c0adfca1ccbbbdf9e6c7e97#/pages/126619289/simulate/no-panels
